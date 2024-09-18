@@ -13,14 +13,16 @@ const large = new Array(100000).fill('nemo');
 
 function findNemo(array) {
     for (let i = 0; i < array.length; i++) {
+        console.log('running');
         if (array[i] === 'nemo') {
             console.log('Found ' + i + ' nemo');
+            break;
         }
     }
 }
-findNemo(nemo);
-findNemo(everyone);
-findNemo(large);
+// findNemo(nemo);
+// findNemo(everyone);
+// findNemo(large);
 
 // O(n) time complexity -> Linear time
 // O(1) space complexity -> Constant space
@@ -63,6 +65,51 @@ function anotherFunChallenge(input) {
 // Big O = 4 + 7n = O(n)
 
 // this function is O(n)
+
+// -------------------------------------------------------RULE BOOK-------------------------------------------------------
+// Rule 1: Worst Case
+    // Rule 2: Remove Constants
+        // Rule 3: Different terms for inputs
+            // Rule 4: Drop Non Dominants
+
+
+
+
+
+
+
+
+const boxes = [0, 1, 2, 3, 4, 5];
+
+function logFirstTwoBoxes(boxes) {
+    for(let i = 0; i < boxes.length; i++) {
+        for(let j = 1; j < boxes.length; j++) {
+            if(i === boxes.length - 1) {
+
+            } else {
+                console.log(boxes[i] + ' ' + boxes[j]);
+            }
+        }
+    }
+}
+
+// logFirstTwoBoxes(boxes);
+
+function printAllNumbersThenAllPairSums(numbers) {
+    console.log("these are the numbers:");
+    numbers.forEach(function(number) {
+        console.log(number);
+    });
+
+    console.log("and these are their sums:");
+    numbers.forEach(function(firstNumber) {
+        numbers.forEach(function(secondNumber) {
+            console.log(firstNumber + secondNumber);
+        });
+    });
+}
+
+printAllNumbersThenAllPairSums([1, 2, 3, 4, 5]); // O(n^2)
 
 
 
