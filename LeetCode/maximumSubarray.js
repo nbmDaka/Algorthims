@@ -1,22 +1,19 @@
 var maxSubArray = function(nums) {
-    let count = 0;
-    let result = 0;
-    let subarray = [];
-    for(let i = 0; i < nums.length; i++) {
-        count += nums[i];
-    }
-    console.log(count);
+    let localMax = nums[0];
+    let globalMax = nums[0];
 
-    for(let i = 0; i < nums.length; i++){
-        if(result < count) {
-            result += nums[i];
-        } else {
-            result = count;
+    for(let i = 0; i < nums.length; i++) {
+        localMax = Math.max(nums[i], localMax + nums[i]);
+        if(localMax > globalMax) {
+            globalMax = localMax
         }
     }
-    return result;
+    return globalMax
 };
+
+const nums = [9031,8403,-7093,9614,3293,-1900]
 
 console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
 // Not solved yet problem maximumSubarray
+// Second day attempt
